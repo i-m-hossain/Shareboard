@@ -1,0 +1,5 @@
+
+*** MVC -we will build our own mini framework
+*** User Login and registration
+*** Working with Sessions
+*** Fetch & insert data into MySQL through our application
