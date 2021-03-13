@@ -23,15 +23,20 @@
                 <a class="navbar-brand" href="<?php echo ROOT_URL; ?>">Shareboard</a>
             </div>
             <div id=" navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="<?php echo ROOT_URL; ?>">Home</a></li>
-                        <li><a href="<?php echo ROOT_URL; ?>shares">Shares</a></li>
-                    </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="<?php echo ROOT_URL; ?>">Home</a></li>
+                    <li><a href="<?php echo ROOT_URL; ?>shares">Shares</a></li>
+                </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <?php if (isset($_SESSION['is_logged_in'])) : ?>
+                        <li><a href="<?php echo ROOT_URL; ?>">Welcome <?php echo $_SESSION['user_data']['name']; ?></a></li>
+                        <li><a href="<?php echo ROOT_URL; ?>users/logout">Logout</a></li>
+                    <?php else : ?>
                         <li><a href="<?php echo ROOT_URL; ?>users/login">Login</a></li>
                         <li><a href="<?php echo ROOT_URL; ?>users/register">Register</a></li>
-                    </ul>
+                    <?php endif ?>
+                </ul>
             </div>
             <!--/.nav-collapse -->
         </div>
