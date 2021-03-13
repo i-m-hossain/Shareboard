@@ -13,6 +13,10 @@ class ShareModel extends Model{
         //sanitize post
        $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
        if($post['submit']){
+            if ($post['title'] == '' || $post['body'] == '' || $post['link'] == '') {
+                Messages::setMsg('Input fields can not be blank', 'error');
+                return;
+            }
            $this->query('INSERT INTO shares (title,body, link, user_id) VALUES (:title, :body, :link, :user_id)');
            $this->bind(':title', $post['title']);
            $this->bind(':body',  $post['body']);

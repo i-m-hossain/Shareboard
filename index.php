@@ -4,7 +4,9 @@ session_start();
 // Include Config
 require('config.php');
 
-require( 'classes/Bootstrap.php' );
+require( 'classes/Messages.php');
+
+require('classes/Bootstrap.php' );
 require( 'classes/Controller.php' );
 require( 'classes/Model.php' );
 
