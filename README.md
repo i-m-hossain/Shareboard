@@ -11,3 +11,4 @@ Features:
 2. Creating Post
 3. Updating Post
 4. Delete post
+5. Error and Success message using HTTP session
